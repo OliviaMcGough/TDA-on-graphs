@@ -40,9 +40,7 @@ def make_tournaplex_input(df, year, threshold):
 
 
 
-
-
-    # USING TOURNSER 
+# USING TOURNSER 
 
 
 # go to directory where tournser is stored
