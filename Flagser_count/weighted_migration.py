@@ -1,115 +1,20 @@
+# using flagser_count 
+
 from pyflagsercount import flagser_count
 import numpy as np
 import pandas as pd
 import networkx as nx
-import matplotlib.pyplot as plt
 from pyflagser import flagser_unweighted
 from pyflagser import flagser_weighted
 import scipy
 
 
-# PREPROCESSING
-state_codes = {}
-state_codes[1]='Alabama'
-state_codes[2]='Alaska'
-#3?
-state_codes[4]='Arizona'
-state_codes[5]='Arkansas'
-state_codes[6]='California'
-#7?
-state_codes[8]='Colorado'
-state_codes[9]='Connecticut'
-state_codes[10]='Delaware'
-state_codes[11]='District of Columbia'
-state_codes[12]='Florida'
-state_codes[13]='Georgia'
-#14?
-state_codes[15]='Hawaii'
-state_codes[16]='Idaho'
-state_codes[17]='Illinois'
-state_codes[18]='Indiana'
-state_codes[19]='Iowa'
-state_codes[20]='Kansas'
-state_codes[21]='Kentucky'
-state_codes[22]='Louisiana'
-state_codes[23]='Maine'
-state_codes[24]='Maryland'
-state_codes[25]='Massachusetts'
-state_codes[26]='Michigan'
-state_codes[27]='Minnesota'
-state_codes[28]='Mississippi'
-state_codes[29]='Missouri'
-state_codes[30]='Montana'
-state_codes[31]='Nebraska'
-state_codes[32]='Nevada'
-state_codes[33]='New Hampshire'
-state_codes[34]='New Jersey'
-state_codes[35]='New Mexico'
-state_codes[36]='New York'
-state_codes[37]='North Carolina'
-state_codes[38]='North Dakota'
-state_codes[39]='Ohio'
-state_codes[40]='Oklahoma'
-state_codes[41]='Oregon'
-state_codes[42]='Pennsylvania'
-#43?
-state_codes[44]='Rhode Island'
-state_codes[45]='South Carolina'
-state_codes[46]='South Dakota'
-state_codes[47]='Tennessee'
-state_codes[48]='Texas'
-state_codes[49]='Utah'
-state_codes[50]='Vermont'
-state_codes[51]='Virginia'
-state_codes[53]='Washington'
-#52?
-state_codes[54]='West Virginia'
-state_codes[55]='Wisconsin'
-state_codes[56]='Wyoming'
-
-
-df = pd.read_csv('usa_00003.csv')
-df2 = df.loc[df['MIGRATE1'] == 3]
-df2 = df2.loc[df2['MIGPLAC1']<=56]
-df2 = df2.loc[df2['STATEFIP']<=56]
-df2 = df2[['YEAR','MIGPLAC1', 'STATEFIP','METRO', 'SEX', 'AGE', 'RACE', 'HISPAN', 'POVERTY']]
+# assuming we have data in a dataframe (df) with three columns, From, To, and Weight to describe a weighted, directed graph
 
 
 # DEFINE FUNCTIONS
-def edge_counts(df):
-    edges = {}
-    for i in range(len(df)):
-        node1 = df.iloc[i,1]
-        node2 = df.iloc[i,2]
-        edge = (node1, node2)
-        if edge not in edges:
-            edges[edge] = 1
-        else:     
-            edges[edge] += 1            
-    return edges
 
-def make_df(edges):
-    sources = []
-    sinks = []
-    weights = []
-    for edge in edges:
-        sources.append(edge[0])
-        sinks.append(edge[1])
-        weights.append(edges[edge])
-    return pd.DataFrame({'From': sources, 'To': sinks, 'Weight': weights})
-
-
-def normalize(df):
-    # compute total out weight
-    out_weights = {}
-    for i in set(df["From"]):
-        out_weights[i] = df[df["From"] == i]["Weight"].sum()
-    
-    norm = df.apply(lambda s: [s["From"], s["To"], 1.0 - s["Weight"] / out_weights[s["From"]]], axis = 1)
-    new_df = pd.DataFrame.from_dict(dict(zip(norm.index, norm.values))).T
-    return new_df.rename(columns={0: "From", 1: "To", 2: "Weight"})
-
-
+# this function will make sure the labels of your vertices are consistent with those used in tournser
 def simplify(df):
     ordering = {}
     for (i, state) in enumerate(set(df["To"]).union(set(df["From"]))):
