@@ -1,4 +1,4 @@
-# using flagser_count 
+# this file shows how to set up your data to use flagser-count
 # assuming we have data in a dataframe (df) with three columns, From, To, and Weight to describe a weighted, directed graph
 
 
