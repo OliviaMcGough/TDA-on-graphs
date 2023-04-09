@@ -10,8 +10,8 @@
 # simplifying the data because tournser requires that the vertices be labeled 1 through n and the edges be in lexicographic order
 def simplify(df):
     ordering = {}
-    for (i, state) in enumerate(set(df["To"]).union(set(df["From"]))):
-        ordering[state] = i
+    for (i, j) in enumerate(set(df["To"]).union(set(df["From"]))):
+        ordering[j] = i
     new_from = df["From"].apply(lambda r: ordering[r])
     new_to = df["To"].apply(lambda r: ordering[r])
     new_df = pd.DataFrame({"From": new_from, "To": new_to, "Weight": df["Weight"]})
