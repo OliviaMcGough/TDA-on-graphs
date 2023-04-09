@@ -1,4 +1,4 @@
-# This file explains how to clone the tounser github repository and use tournser
+# This file explains how to clone the tounser github repository 
 
 
 
