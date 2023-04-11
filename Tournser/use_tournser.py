@@ -1,11 +1,4 @@
-
-# MAKING INPUT.TXT
-# beginning with dataframe with three columns,
-# the first column is the From column,
-# the second columsn is the To column, 
-# the third column is the Weight of the edge described by From and To in the corresponding row
-# these describe the directed edges present in the graph and their weights
-
+import pandas as pd
 
 # simplifying the data because tournser requires that the vertices be labeled 1 through n and the edges be in lexicographic order
 def simplify(df):
@@ -35,8 +28,3 @@ def make_tournaplex_input(df, year, threshold):
     for source, sink, weight in zip(df["From"], df["To"], df["Weight"]):
         ret += str(source) + " " + str(sink) + " " + str(weight) + "\n"
     return 
-    
-
-
-
-
