@@ -2,7 +2,7 @@
 
 To install, you need a C++ compiler. These examples use `g++`.
 
-```
+```sh
 # make directory on your computer where you want to install tournser 
 mkdir tournser-compilation
 # go into that directory 
