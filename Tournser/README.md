@@ -1,10 +1,9 @@
-# This file explains how to clone the tounser github repository 
+# Installation
 
+To install, you need a C++ compiler. These examples use `g++`.
 
-
-
-############################# INSTALLATION #################################
-# make directory on your computer where you want to install tounser 
+```
+# make directory on your computer where you want to install tournser 
 mkdir tournser-compilation
 # go into that directory 
 cd !$
@@ -12,7 +11,7 @@ cd !$
 git clone --recursive https://github.com/JasonPSmith/tournser.git
 # go into the file tournser from that repository 
 cd tournser
-# use g++ to run the C++ code needed to use code from this repository
+# build the tournser binary with your compiler of choice, e.g.
 g++ --std=c++17 tournser.cpp -o ./tournser
 # the rest of this installationtion code just organizes the code, but is not necessary for installation
 # go back to tournser-compilation
@@ -25,11 +24,4 @@ cd ..
 mv tournser-compilation/tournser/ .
 # remove tournser-compliation
 rm -r tournser-compilation/
-
-
-
-
-
-
-
-
+```
