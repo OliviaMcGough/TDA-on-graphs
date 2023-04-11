@@ -1,6 +1,4 @@
-# this file demonstrates how to parse the tournser output.txt file
-# also provides intersection function if one wants to find the intersection of two tournaplexes
-
+import pandas as pd
 
 def parse(tournser: str):
     ret = []
