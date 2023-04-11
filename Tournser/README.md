@@ -25,3 +25,18 @@ mv tournser-compilation/tournser/ .
 # remove tournser-compliation
 rm -r tournser-compilation/
 ```
+
+# Usage  
+Go to directory where tournser is stored and run the following code. Run `make_tournaplex_input` from `use_tournser.py` to generate `input.txt` in correct format. Note that `output.txt` is the file you want to save the persistence intervals, cell counts, and Betti numbers, and `extra.txt` is the file you want to save the tournaplex, formatted as  described in [https://github.com/JasonPSmith/tournser/blob/master/tournser_documentation.pdf]. If you don't want the tournaplex printed, don't write `--print extra.txt`. You can also specifiy filtrations, see the documentation.
+
+```sh
+./tournser input.txt output.txt --print extra.txt
+```
+
+## input.txt
+
+The `use_tournser.py` script expects a three-column dataframe whose rows are edges as follows:
+
+- The first column, called "From", is the source nodes,
+- the second column, called "To", is the sink nodes,
+- the third column, called "Weight", is the edge weights.
