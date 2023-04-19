@@ -52,6 +52,19 @@ def make_matrix(df, threshold):
     mat = nx.adjacency_matrix(graph, nodelist=nodeList).todense()
     return scipy.sparse.csr_matrix(mat)
 
+# make adjacency matrix for underlying undirected graph to compute flag complex instead of directed flag complex
+# this ensures that all edges are consistently ordered so each all-to-all connected subgraph is also feet forward
+def undirected(matrix):
+    dense = matrix.todense()
+    for i in range(len(dense)):
+        for j in range(len(dense)):
+            if dense[i,j] > 0 or dense[j,i]>0:
+                dense[i,j] = 1
+            if i>j:
+                dense[i,j]= 0
+    return dense
+
+
 # look at intersection of two flagser_count outputs, where n is the number of vertices in the simplices you want to find the intersection of
 def intersection_of_size(x1, x2, n):
     x1_n = x1["simplices"][n - 1]
@@ -73,6 +86,6 @@ m2 = make_matrix(simplify(df2))
 
 # if you only want betti numbers and cell counts, indicate return_simplices=False
 x1 = flagser_count(m1, return_simplices=True)
-x2 = flagser_count(m1, return_simplices=True)
+x2 = flagser_count(m2, return_simplices=True)
 
 print(intersection_of_size(x1,x2,3))
