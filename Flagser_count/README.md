@@ -1,4 +1,4 @@
-# INSTALLING flagset-count
+# INSTALLING flagser-count
 
 ## Normally
 
