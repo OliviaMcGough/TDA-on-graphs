@@ -1,4 +1,4 @@
-function [sk0, sk1,sk2,sk3, sk4, sk5,sk6] = dowker2(A)
+function [sk0, sk1, sk2, sk3, sk4, sk5, sk6, m] = dowker2(A)
 
 n=length(A);
 diam=max(max(A));
@@ -18,7 +18,7 @@ for ii=1:size(q,1)
     eT=min(aIJ);
     sk1(ii,end)=eT;
 end
-sk1(sk1(:,3)==1,:)=[];
+sk1(sk1(:,3) == m,:)=[];
 
 if (nargout>2)
 % Build 2-skeleton
@@ -33,7 +33,7 @@ for ii=1:size(q,1)
     eT=min(aIJK);
     sk2(ii,end)=eT;
 end
-sk2(sk2(:,4) ==1,:)=[];
+sk2(sk2(:,4) == m,:)=[];
 end
 
 if (nargout>3)
@@ -50,7 +50,7 @@ for ii=1:size(q,1)
     eT=min(aIJKL);
     sk3(ii,end)=eT;
 end 
-sk3(sk3(:,5) ==1,:)=[];
+sk3(sk3(:,5) == m,:)=[];
 end
 
 if (nargout>4)
@@ -66,7 +66,7 @@ for ii=1:size(q,1)
     eT=min(aIJKLM);
     sk4(ii,end)=eT;
 end
-sk4(sk4(:,6) ==1,:)=[]
+sk4(sk4(:,6) == m,:)=[]
 end
 
 if (nargout>5)
@@ -83,7 +83,7 @@ for ii=1:size(q,1)
     eT=min(aIJKLMN);
     sk5(ii,end)=eT;
 end
-sk5(sk5(:,7) ==1,:)=[]
+sk5(sk5(:,7) == m,:)=[]
 end
 
 
@@ -104,7 +104,7 @@ for ii=1:size(q,1)
     eT=min(aIJKLMNO);
     sk6(ii,end)=eT;
 end
-sk6(sk6(:,8) ==1,:)=[]
+sk6(sk6(:,8) == m,:)=[]
 end
 
 
