@@ -12,5 +12,5 @@ This m is the 8th input of `dowker2`, and any edge with weight m will be treated
 
 # A note on efficiency 
 
-The original funtions `dowker` and `computePers` only build simplicies an compute homology of at most dimension 3. Thus I extended the code for these functions to create `dowker2` and `computePers2` which build simplicies and compute homology up to dimension 6. However, this comes at the cost of efficiency. It takes a several minutes to run `dowker2`. One may choose to write analogous funcitons that build simplices of at most 4 or 5 dimensions to cut down on this time. 
+The original funtions `dowker` and `computePers` only build simplicies and compute homology of at most dimension 3. Thus I extended the code for these functions to create `dowker2` and `computePers2` which build simplicies and compute homology up to dimension 6. However, this comes at the cost of efficiency. It takes a several minutes to run `dowker2`. One may choose to write analogous funcitons that build simplices of at most 4 or 5 dimensions to cut down on this time. 
 
