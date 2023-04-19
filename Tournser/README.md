@@ -41,6 +41,8 @@ The `use_tournser.py` script expects a three-column dataframe whose rows are edg
 - the second column, called "To", is the sink nodes,
 - the third column, called "Weight", is the edge weights.
 
+From this dataframe, `make_tournaplex_input` can format the `input.txt` file correcly.
+
 
 ## Parsing output
 `parse_tournser.py` provides code to parse the tournser `extra.txt` file, and provides intersection function if one wants to find the intersection of two tournaplexes.
