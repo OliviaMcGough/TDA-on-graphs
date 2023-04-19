@@ -1,7 +1,7 @@
 # SET-UP
 
-The `dowker2` and `computePers2` functions are adapted from the functions `dowker` and `computePers` from[PersNet](https://github.com/fmemoli/PersNet).
-These functions rely on Javaplex (installation instructions at [persnet-tutorial](https://github.com/fmemoli/PersNet/blob/master/persnet-tutorial.pdf).
+The `dowker2` and `computePers2` functions are adapted from the functions `dowker` and `computePers` from [PersNet](https://github.com/fmemoli/PersNet).
+These functions rely on Javaplex (installation instructions at [persnet-tutorial](https://github.com/fmemoli/PersNet/blob/master/persnet-tutorial.pdf)).
 
 The input to `dowker2` should be an adjacency matrix, similar to the format of the output of `make_matrix` from `flagser_file`.
 *However*, zeros in this adjacency matrix are not read as absent edges by `dowker2`, instead they represent edges that are present at all levels of the filtration. 
