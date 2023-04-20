@@ -2,11 +2,11 @@
 
 ## Normally
 
-Install according to the instructions in the [flagser-count](https://github.com/JasonPSmith/flagser-count) repository.
+Install according to the instructions in the [pyflagser](https://github.com/giotto-ai/pyflagser) [flagser-count](https://github.com/JasonPSmith/flagser-count) repositories.
 
 ## With Anaconda
 
-If you have Anaconda on your machine, you may need to do extra work to set it up.
+If you have Anaconda on your machine, you may need to do extra work to set up `flagser-count`.
 
 ```sh
 # go to directory you want to clone the repository in
@@ -42,4 +42,4 @@ The `flagser_file.py` script expects a three-column dataframe whose rows are edg
 - the second column, called "To", is the sink nodes,
 - the third column, called "Weight", is the edge weights.
 
-To apply the `flagser_count` function to an undirected graph, the adjacency matrix should be upper-triangular. The function `undirected` can turn the matrix of a directed graph into a matrix corresponding to the underlying undirected graph.
+To apply the `flagser_count` function to an undirected graph, the adjacency matrix should be upper-triangular. The function `undirected` can turn the matrix of a directed graph into a matrix corresponding to the underlying undirected graph. You can specify *directed = False* in the flagser_unweighted and flagser_weighed functions in the case of an undirected graph.
