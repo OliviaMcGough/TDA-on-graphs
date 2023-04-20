@@ -9,6 +9,15 @@ Therefore, choose a number m that is greater than all of the edge weights in you
 This m is the 8th input of `dowker2`, and any edge with weight m will be treated as an absent edge by `dowker2`.
 
 
+# USAGE 
+
+Given this matrix M, run the following:
+```sh
+[x0,x1,x2,x3,x4,x5,x6,m] = dowker2(M)
+computePers2(x0,x1,x2,x3,x4,x5,x6,diam)
+```
+where diam is the upper bound on filtration (you could set this to m).
+
 
 # A note on efficiency 
 
