@@ -32,3 +32,12 @@ cd Documents/thesis/flagser-count/build/lib.macosx-10.9-x86_64-3.9/
 # run file that has been saved in above directory
 python3 <FILE>
 ```
+
+
+# USAGE
+
+The `flagser_file.py` script expects a three-column dataframe whose rows are edges as follows:
+
+- The first column, called "From", is the source nodes,
+- the second column, called "To", is the sink nodes,
+- the third column, called "Weight", is the edge weights.
