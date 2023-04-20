@@ -41,7 +41,7 @@ The `use_tournser.py` script expects a three-column dataframe whose rows are edg
 - the second column, called "To", is the sink nodes,
 - the third column, called "Weight", is the edge weights.
 
-From this dataframe, `make_tournaplex_input` can format the `input.txt` file correcly.
+From this dataframe, `make_tournaplex_input` can format the `input.txt` file correctly for tournser application.
 
 
 ## Parsing output
