@@ -59,7 +59,7 @@ def undirected(matrix):
     for i in range(len(dense)):
         for j in range(len(dense)):
             if dense[i,j] > 0 or dense[j,i]>0:
-                dense[i,j] = 1
+                dense[i,j] = min(dense[i,j],dense[j,i])
             if i>j:
                 dense[i,j]= 0
     return dense
