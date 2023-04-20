@@ -1,4 +1,4 @@
-# INSTALLING flagser-count
+# INSTALLING 
 
 ## Normally
 
