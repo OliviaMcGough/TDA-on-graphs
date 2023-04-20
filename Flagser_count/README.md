@@ -41,3 +41,5 @@ The `flagser_file.py` script expects a three-column dataframe whose rows are edg
 - The first column, called "From", is the source nodes,
 - the second column, called "To", is the sink nodes,
 - the third column, called "Weight", is the edge weights.
+
+To apply the `flagser_count` function to an undirected graph, the adjacency matrix should be upper-triangular. The function `undirected` can turn the matrix of a directed graph into a matrix corresponding to the underlying undirected graph.
