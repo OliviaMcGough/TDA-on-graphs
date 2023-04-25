@@ -2,6 +2,6 @@ This repository contains an agglomeration of code for the purpose of applying To
 
 The code corresponding to the flag complex and directed flag complex can be found in the folder [Flagser_count](Flagser_count/README.md). This folder relies on the [pyflagser](https://github.com/giotto-ai/pyflagser) and [flagser-count](https://github.com/JasonPSmith/flagser-count) repositories.
 
-The code corresponding to the flag tournaplex can be found in the folder `Tournser`.  This folder relies on the [tournser](https://github.com/JasonPSmith/tournser.git) repository.
+The code corresponding to the flag tournaplex can be found in the folder [Tournser](Tournser/README.md).  This folder relies on the [tournser](https://github.com/JasonPSmith/tournser.git) repository.
 
-Finally, the code corresponding to the Dowker sink complex can be found in the folder `Dowker`. This folder contains adaptations of the code from [PersNet](https://github.com/fmemoli/PersNet) repository. Note that the Dowker calcuations rely on Javaplex, so this code is written in matlab.
+Finally, the code corresponding to the Dowker sink complex can be found in the folder [Dowker](Dowker/README.md). This folder contains adaptations of the code from [PersNet](https://github.com/fmemoli/PersNet) repository. Note that the Dowker calcuations rely on Javaplex, so this code is written in matlab.
